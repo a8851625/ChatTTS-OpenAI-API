@@ -30,5 +30,21 @@ This will return an audio file with the synthesized speech.
 ## Error Handling
 If a required parameter is missing, a 400 error will be returned. If an error occurs during the speech synthesis process, a 500 error will be returned.
 ```
-Please adjust the above as needed for your project.
+
+## Docker Deployment
+This project can be easily deployed using Docker. The Dockerfile included in the repository sets up a Python environment with all the necessary dependencies and sets up the application to run on port 5001.
+### Building the Docker Image
+To build the Docker image, navigate to the project directory and run the following command:
+```sh
+docker build -t chattts-openai-api .
+```
+This will create a Docker image named "chattts-openai-api".
+### Running the Docker Image
+Once the Docker image has been built, you can run it with the following command:
+```sh
+docker run -p 5001:5001 chattts-openai-api
+```
+This will start the application and bind it to port 5001 on your machine.
+Please keep in mind that the Docker container must have access to an NVIDIA GPU due to the CUDA dependency of the project.
+```
 
